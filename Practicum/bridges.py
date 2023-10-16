@@ -1,5 +1,6 @@
-from colorama import Fore
+from colorama import Fore, init
 
+init(autoreset=True)
 field = [[" ", "O", " ", "O", " ", "O", " ", "O", " "],
          ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
          [" ", "O", " ", "O", " ", "O", " ", "O", " "],
@@ -13,6 +14,7 @@ field = [[" ", "O", " ", "O", " ", "O", " ", "O", " "],
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
 my_dict = {j: i for i, j in enumerate(letters)}
 players = {1: "X", 2: "O"}
+colors = {"X": Fore.LIGHTBLUE_EX, "O": Fore.LIGHTRED_EX}
 
 
 def draw_field():
@@ -40,11 +42,11 @@ def draw_field():
 def check_step(line, row, sign):
     if line - 1 >= 0 and line + 1 < 10:
         if field[line - 1][row] == sign and field[line + 1][row] == sign:
-            field[line][row] = "|"
+            field[line][row] = f"{colors[sign]}|"
             return
     if row - 1 >= 0 and row + 1 < 10:
         if field[line][row - 1] == sign and field[line][row + 1] == sign:
-            field[line][row] = "--"
+            field[line][row] = f"{colors[sign]}--"
             return
     print(f"Сюда нельзя ходить, потому что у {sign} нет пары, инициатива переходит сопернику")
 

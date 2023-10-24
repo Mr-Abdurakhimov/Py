@@ -5,7 +5,7 @@ def make_a_number():
     return randint(1000, 9999)
 
 
-def chech_for_bull(num_riddled, num_from_player):
+def check_for_bull(num_riddled, num_from_player):
     count = 0
     start = 1
     for i in range(4):
@@ -35,6 +35,6 @@ while game_on:
         print("Поздравляем, вы угадали число !")
         game_on = False
         break
-    bulls = chech_for_bull(num, trial)
+    bulls = check_for_bull(num, trial)
     cows = check_for_cow(num, trial)
     print(f"Коров: {cows}\nБыков: {bulls}")

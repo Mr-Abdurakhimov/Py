@@ -14,13 +14,10 @@ def drawField():
 
 
 def make_a_step(player, line, row):
-    global score
     places[line][row] = signs[player]
     check(player, line, row)
 
-
 def check(player, line, row):
-    global score
     minimal_line = line
     maximal_line = line
     maximal_row = row

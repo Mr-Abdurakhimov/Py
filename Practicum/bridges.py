@@ -1,6 +1,7 @@
 from colorama import Fore, init
-
 init(autoreset=True)
+
+
 field = [[" ", "O", " ", "O", " ", "O", " ", "O", " "],
          ["X", " ", "X", " ", "X", " ", "X", " ", "X"],
          [" ", "O", " ", "O", " ", "O", " ", "O", " "],
